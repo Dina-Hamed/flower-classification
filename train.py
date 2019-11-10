@@ -144,6 +144,7 @@ def train_model_wrapper(args):
     # 1. Load a pre-trained network
     if args.arch == 'vgg': 
         model = models.vgg16(pretrained=True)
+        number_input_ features = model.classifier[0].in_features
     elif args.arch == 'densenet':
         model = models.densenet121(pretrained=True)
 
